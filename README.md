@@ -95,6 +95,7 @@ To configure your project for Flutter, You can do the following:
 
 The app's design is available on Figma. You can view and interact with the design files using the
 following link:
+
 [Figma Design Link](https://www.figma.com/design/qrNLBtoQ0jjxePgdp3Okto/Lask_App?node-id=0-1&t=L8Zy3RNqjlIMRWir-1).
 
 ## Contributing
