@@ -1,0 +1,35 @@
+name: lask_app
+description: "A News App project made with Flutter Framework and Dart as a programming language."
+publish_to: "none"
+version: 0.1.0
+
+environment:
+  sdk: ">=3.3.0-233.0.dev <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  flutter_bloc: ^8.1.6
+  bloc: ^8.1.4
+  dio: ^5.5.0+1
+  intl: ^0.19.0
+  flutter_native_splash: ^2.4.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+
+# for our splash screen
+flutter_native_splash:
+  image: assets/images/splash.png
+  color: "#E9EEFA"
+  color_dark: "#D9D9D9"
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/
+    - assets/images/splash.png
