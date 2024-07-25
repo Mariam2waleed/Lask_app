@@ -1,0 +1,13 @@
+com.example.lask_app-jetified-annotation-experimental-1.1.0-0 C:\Users\maria\.gradle\caches\transforms-3\52a8d1db732f84f236a29cd47ec67590\transformed\jetified-annotation-experimental-1.1.0\res
+com.example.lask_app-jetified-window-1.0.0-beta04-1 C:\Users\maria\.gradle\caches\transforms-3\cb37dde28e3a1bf63866ca4bb126b897\transformed\jetified-window-1.0.0-beta04\res
+com.example.lask_app-core-1.6.0-2 C:\Users\maria\.gradle\caches\transforms-3\ce4983bb2fd750501616fb4715120ffd\transformed\core-1.6.0\res
+com.example.lask_app-jetified-window-java-1.0.0-beta04-3 C:\Users\maria\.gradle\caches\transforms-3\d7471cbf50cd58664fe5fffb3b8697c5\transformed\jetified-window-java-1.0.0-beta04\res
+com.example.lask_app-debug-4 D:\Work\Mobadra\lask_app\android\app\src\debug\res
+com.example.lask_app-main-5 D:\Work\Mobadra\lask_app\android\app\src\main\res
+com.example.lask_app-pngs-6 D:\Work\Mobadra\lask_app\build\app\generated\res\pngs\debug
+com.example.lask_app-resValues-7 D:\Work\Mobadra\lask_app\build\app\generated\res\resValues\debug
+com.example.lask_app-rs-8 D:\Work\Mobadra\lask_app\build\app\generated\res\rs\debug
+com.example.lask_app-mergeDebugResources-9 D:\Work\Mobadra\lask_app\build\app\intermediates\incremental\debug\mergeDebugResources\merged.dir
+com.example.lask_app-mergeDebugResources-10 D:\Work\Mobadra\lask_app\build\app\intermediates\incremental\debug\mergeDebugResources\stripped.dir
+com.example.lask_app-merged_res-11 D:\Work\Mobadra\lask_app\build\app\intermediates\merged_res\debug
+com.example.lask_app-packaged_res-12 D:\Work\Mobadra\lask_app\build\flutter_native_splash\intermediates\packaged_res\debug
