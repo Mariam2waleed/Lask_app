@@ -1,10 +1,10 @@
-import 'package:flutter/material.dart';
 import 'package:dio/dio.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:lask_app/features/article/controller/article_cubit.dart';
-import 'package:lask_app/features/welcome_home/screens/welcome.dart';
-import 'package:lask_app/features/welcome_home/controller/home_cubit.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
+import 'package:lask_app/features/article/controller/article_cubit.dart';
+import 'package:lask_app/features/welcome_home/controller/home_cubit.dart';
+import 'package:lask_app/features/welcome_home/screens/welcome.dart';
 
 void main() {
   WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
@@ -14,6 +14,7 @@ void main() {
   initialization();
 }
 
+// Trying to do it
 void initialization() async {
   // This is where you can initialize the resources needed by your app while
   // the splash screen is displayed.  Remove the following example because
