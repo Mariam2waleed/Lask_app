@@ -1,4 +1,8 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:intl/intl.dart';
+import 'package:lask_app/features/article/widgets/article_widgets.dart';
 
 class ArticlesPage extends StatelessWidget {
   const ArticlesPage({super.key, required this.articleData});
@@ -11,14 +15,14 @@ class ArticlesPage extends StatelessWidget {
         body: Stack(children: [
       // Background Color & Image
       Container(
-          height: double.maxFinite,
+          height: double.infinity,
           width: double.infinity,
           decoration: BoxDecoration(
               image: DecorationImage(
                   image: NetworkImage(articleData['urlToImage'] ?? 'No Image'),
                   alignment: Alignment.topCenter,
                   fit: BoxFit.contain))),
-      // Overlayer Box
+      // Overlayer Rounded Box
       Container(
           height: double.infinity,
           width: double.infinity,
@@ -27,27 +31,39 @@ class ArticlesPage extends StatelessWidget {
               color: Colors.white,
               borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(50), topRight: Radius.circular(50))),
-          child:  Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    //  Bold Title
-                    Text(articleData['title'],
-                        textAlign: TextAlign.center,
-                        style: const TextStyle(
-                            fontWeight: FontWeight.bold, fontSize: 20)),
-                    // Description
-                    Text(articleData['author'],
-                        textAlign: TextAlign.center,
-                        style: const TextStyle(
-                            fontWeight: FontWeight.normal,
-                            fontSize: 15,
-                            color: Colors.grey)),
-                  ])))
+          child: articleDetails(
+              title: articleData['title'] ?? "No title",
+              image: articleData['urlToImage'] ?? "No image",
+              author: articleData['author'] ?? "No author",
+              date: articleData['publishedAt'] ?? "No Date",
+              description: articleData['description'] ?? "No description")),
+
+      Align(
+        alignment: Alignment.bottomCenter,
+        child: Container(
+          width: double.infinity,
+          decoration: BoxDecoration(
+              color:
+                  Colors.white24 ?? Colors.grey[400], 
+              borderRadius: const BorderRadius.only(
+                  topLeft: Radius.circular(25), topRight: Radius.circular(25))),
+          child: Row(
+            children: [
+              IconButton(
+                  onPressed: () => Navigator.pop(context),
+                  icon: const Icon(Icons.arrow_back_rounded)),
+              const Spacer(),
+              IconButton(
+                  onPressed: () {},
+                  icon: const Icon(Icons.celebration_rounded)),
+              IconButton(
+                  onPressed: () {}, icon: const Icon(Icons.bookmark_border)),
+              IconButton(
+                  onPressed: () {}, icon: const Icon(Icons.share_outlined)),
+            ],
+          ),
+        ),
+      ),
     ]));
   }
 }
-
-// Pagenation //

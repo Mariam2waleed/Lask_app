@@ -3,7 +3,7 @@ import 'package:intl/intl.dart';
 
 // My Home AppBar
 Widget customAppBar() {
-  var date = DateFormat('EEE d MMMM yyyy').format(DateTime.now());
+  var date = DateFormat('EEE d MMMM, yyyy').format(DateTime.now());
 
   return Container(
       width: double.infinity,
@@ -11,12 +11,12 @@ Widget customAppBar() {
       decoration: BoxDecoration(color: Colors.indigo[100]),
       child: Row(children: [
         Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.only(left: 10),
             child:
                 Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
               const SizedBox(height: 60),
-              const Text('Good Morning \n Trung',
-                  style: TextStyle(color: Colors.grey, fontSize: 16)),
+               Text('Good Morning \n Trung',
+                  style: TextStyle(color: Colors.grey[600], fontSize: 16)),
               Text(date.toString(),
                   style: const TextStyle(
                       color: Colors.black,
@@ -24,9 +24,13 @@ Widget customAppBar() {
                       fontWeight: FontWeight.bold))
             ])),
         const Spacer(),
-        const Text("☀  Sunny 32°C ",
-            style: TextStyle(
-                color: Colors.black, fontSize: 18, fontWeight: FontWeight.bold))
+        const Padding(
+            padding: EdgeInsets.only(right: 10),
+            child: Text("☀  Sunny 32°C ",
+                style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold)))
       ]));
 }
 

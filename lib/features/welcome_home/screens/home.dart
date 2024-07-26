@@ -14,80 +14,85 @@ class HomePage extends StatelessWidget {
     return BlocBuilder<HomeCubit, HomeState>(builder: (context, state) {
       return Scaffold(
           body: Column(children: [
+        // Home App Bar
         customAppBar(),
+        // Home Page Body Scroller
         Expanded(
             child: SingleChildScrollView(
-                child: Column(children: [
-          const SizedBox(height: 10),
-          // Main Newes
-          SizedBox(
-              height: 330,
-              child: state is GetNewsLoading
-                  ? const Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [CircularProgressIndicator()])
-                  : ListView.separated(
-                      scrollDirection: Axis.horizontal,
-                      itemBuilder: (context, index) => GestureDetector(
-                          onTap: () => Navigator.of(context).push(
-                              MaterialPageRoute(
-                                  builder: (context) => ArticlesPage(
-                                      articleData: homeBloc.homeData[index]))),
-                          child: card(
-                              image: homeBloc.homeData[index]['urlToImage'] ??
-                                  'No Image',
-                              title: homeBloc.homeData[index]['title'] ??
-                                  'No Title',
-                              subtitle: homeBloc.homeData[index]['author'] ??
-                                  'No Author')),
-                      itemCount: homeBloc.homeData.length,
-                      separatorBuilder: (BuildContext context, int index) {
-                        return const SizedBox(width: 5);
+                child: Padding(
+          padding: const EdgeInsets.only(left: 10, top: 10),
+          child: Column(children: [
+            // Main Newes
+            SizedBox(
+                height: 330,
+                child: state is GetNewsLoading
+                    ? const Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [CircularProgressIndicator()])
+                    : ListView.separated(
+                        scrollDirection: Axis.horizontal,
+                        itemBuilder: (context, index) => GestureDetector(
+                            onTap: () => Navigator.of(context).push(
+                                MaterialPageRoute(
+                                    builder: (context) => ArticlesPage(
+                                        articleData:
+                                            homeBloc.homeData[index]))),
+                            child: card(
+                                image: homeBloc.homeData[index]['urlToImage'] ??
+                                    'No Image',
+                                title: homeBloc.homeData[index]['title'] ??
+                                    'No Title',
+                                subtitle: homeBloc.homeData[index]['author'] ??
+                                    'No Author')),
+                        itemCount: homeBloc.homeData.length,
+                        separatorBuilder: (BuildContext context, int index) {
+                          return const SizedBox(width: 10);
+                        })),
+            // Just For You Title & See More Button
+            Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const Text(' Just For You',
+                      style:
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
+                  const Spacer(),
+                  TextButton(
+                      onPressed: () {
+                        homeBloc.seeMoreFun();
                       },
-                    )),
-          // Just For You
-          Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                const Text(' Just For You',
-                    style:
-                        TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
-                const Spacer(),
-                TextButton(
-                    onPressed: () {
-                      homeBloc.seeMoreFun();
-                    },
-                    child: const Text('See More '))
-              ]),
-          // Just For You List
-          SizedBox(
-              height: 330,
-              child: state is GetNewsLoading
-                  ? const Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [CircularProgressIndicator()])
-                  : ListView.separated(
-                      scrollDirection: Axis.horizontal,
-                      itemBuilder: (context, index) => GestureDetector(
-                          onTap: () => Navigator.of(context).push(
-                              MaterialPageRoute(
-                                  builder: (context) => ArticlesPage(
-                                      articleData: homeBloc.homeData[index]))),
-                          child: card(
-                              image: homeBloc.homeData[index]['urlToImage'] ??
-                                  'No Image',
-                              title: homeBloc.homeData[index]['title'] ??
-                                  'No Title',
-                              subtitle: homeBloc.homeData[index]['author'] ??
-                                  'No Author')),
-                      itemCount:
-                          homeBloc.seeMore ? homeBloc.homeData.length : 10,
-                      separatorBuilder: (BuildContext context, int index) {
-                        return const SizedBox(width: 5);
-                      },
-                    ))
-        ])))
+                      child: const Text('See More '))
+                ]),
+            // Just For You List
+            SizedBox(
+                height: 330,
+                child: state is GetNewsLoading
+                    ? const Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [CircularProgressIndicator()])
+                    : ListView.separated(
+                        scrollDirection: Axis.horizontal,
+                        itemBuilder: (context, index) => GestureDetector(
+                            onTap: () => Navigator.of(context).push(
+                                MaterialPageRoute(
+                                    builder: (context) => ArticlesPage(
+                                        articleData:
+                                            homeBloc.homeData[index]))),
+                            child: card(
+                                image: homeBloc.homeData[index]['urlToImage'] ??
+                                    'No Image',
+                                title: homeBloc.homeData[index]['title'] ??
+                                    'No Title',
+                                subtitle: homeBloc.homeData[index]['author'] ??
+                                    'No Author')),
+                        itemCount:
+                            homeBloc.seeMore ? homeBloc.homeData.length : 10,
+                        separatorBuilder: (BuildContext context, int index) {
+                          return const SizedBox(width: 10);
+                        },
+                      ))
+          ]),
+        )))
       ]));
     });
   }
