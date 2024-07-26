@@ -95,32 +95,7 @@ class HomePage extends StatelessWidget {
                                       separatorBuilder: (BuildContext context, int index) {
                                         return const SizedBox(width: 10);
                                       })),
-                          SizedBox(
-                              height: 330,
-                              child: state is GetNewsLoading
-                                  ? const Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      children: [CircularProgressIndicator()])
-                                  : ListView.separated(
-                                      scrollDirection: Axis.horizontal,
-                                      itemBuilder: (context, index) => GestureDetector(
-                                          onTap: () => Navigator.of(context).push(MaterialPageRoute(
-                                              builder: (context) => ArticlesPage(
-                                                  articleData: homeBloc
-                                                      .justForYouData[index]))),
-                                          child: card(
-                                              image:
-                                                  homeBloc.justForYouData[index]
-                                                          ['urlToImage'] ??
-                                                      'No Image',
-                                              title: homeBloc.justForYouData[index]['title'] ?? 'No Title',
-                                              subtitle: homeBloc.justForYouData[index]['author'] ?? 'No Author')),
-                                      itemCount: homeBloc.seeMore ? homeBloc.justForYouData.length : 10,
-                                      separatorBuilder: (BuildContext context, int index) {
-                                        return const SizedBox(width: 10);
-                                      }))
-                        ])))),
+                                                ])))),
 
             // Bottom Nav Bar
             Align(

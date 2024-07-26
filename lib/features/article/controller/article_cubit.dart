@@ -5,4 +5,6 @@ part 'article_state.dart';
 
 class ArticleCubit extends Cubit<ArticleState> {
   ArticleCubit() : super(ArticleInitial());
+
+   List homeData = [];
 }
