@@ -1,14 +1,15 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_native_splash/flutter_native_splash.dart';
+// import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:lask_app/features/article/controller/article_cubit.dart';
 import 'package:lask_app/features/welcome_home/controller/home_cubit.dart';
 import 'package:lask_app/features/welcome_home/screens/welcome.dart';
 
+// Pagenation //
 void main() {
-  WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
-  FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
+  // WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
+  // FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
   runApp(const MyApp());
   initialization();
 }
@@ -21,7 +22,7 @@ void initialization() async {
   print('ready in 1...');
   await Future.delayed(const Duration(seconds: 1));
   print('go!');
-  FlutterNativeSplash.remove();
+  // FlutterNativeSplash.remove();
 }
 
 var dio = Dio();
@@ -33,7 +34,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
         providers: [
-          BlocProvider(create: (context) => HomeCubit()..getHomeData()),
+          BlocProvider(
+              create: (context) => HomeCubit()
+                ..getHomeData()
+                ..getJustForYouData()),
           BlocProvider(create: (context) => ArticleCubit())
         ],
         child: const MaterialApp(
@@ -43,6 +47,3 @@ class MyApp extends StatelessWidget {
             home: WelcomePage()));
   }
 }
-
-
-// Pagenation //

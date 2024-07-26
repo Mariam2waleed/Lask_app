@@ -10,7 +10,7 @@ class WelcomePage extends StatelessWidget {
         body: Stack(children: [
       // Background Color & Image
       Container(
-          height: double.maxFinite,
+          height: double.infinity,
           width: double.infinity,
           decoration: const BoxDecoration(
               gradient: LinearGradient(
@@ -21,19 +21,19 @@ class WelcomePage extends StatelessWidget {
                   image: AssetImage('assets/images/splash.png'),
                   alignment: Alignment.topCenter,
                   fit: BoxFit.contain))),
-      // Overlayer Box
+      // Overlay Box
       Container(
           height: double.infinity,
           width: double.infinity,
-          margin: const EdgeInsets.only(top: 500),
+          margin: const EdgeInsets.only(top: 550),
           decoration: const BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(50), topRight: Radius.circular(50))),
           child: Padding(
-              padding: const EdgeInsets.all(22.0),
+              padding: const EdgeInsets.all(35.0),
               child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
+                  // mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     //  Bold Title
@@ -49,6 +49,7 @@ class WelcomePage extends StatelessWidget {
                             fontWeight: FontWeight.normal,
                             fontSize: 15,
                             color: Colors.grey)),
+                    const SizedBox(height: 15),
                     // Explore Button
                     ElevatedButton(
                         style: ElevatedButton.styleFrom(

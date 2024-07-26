@@ -1,4 +1,4 @@
-#Thu Jul 25 19:28:32 EEST 2024
+#Fri Jul 26 20:53:20 EEST 2024
 base.0=D\:\\Work\\Mobadra\\lask_app\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
 path.0=classes.dex
 renamed.0=classes.dex

@@ -1,7 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:intl/intl.dart';
 import 'package:lask_app/features/article/widgets/article_widgets.dart';
 
 class ArticlesPage extends StatelessWidget {
@@ -42,10 +39,10 @@ class ArticlesPage extends StatelessWidget {
         alignment: Alignment.bottomCenter,
         child: Container(
           width: double.infinity,
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
               color:
-                  Colors.white24 ?? Colors.grey[400], 
-              borderRadius: const BorderRadius.only(
+                  Colors.white24, //?? Colors.grey[400],
+              borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(25), topRight: Radius.circular(25))),
           child: Row(
             children: [

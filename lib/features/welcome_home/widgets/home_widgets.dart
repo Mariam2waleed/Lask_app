@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:lask_app/Themes/themes.dart';
 
 // My Home AppBar
-Widget customAppBar() {
+Widget homeAppBar() {
   var date = DateFormat('EEE d MMMM, yyyy').format(DateTime.now());
 
   return Container(
       width: double.infinity,
-      height: 150,
+      height: 170,
       decoration: BoxDecoration(color: Colors.indigo[100]),
       child: Row(children: [
         Padding(
@@ -15,11 +16,11 @@ Widget customAppBar() {
             child:
                 Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
               const SizedBox(height: 60),
-               Text('Good Morning \n Trung',
+              Text('Good Morning \n Trung',
                   style: TextStyle(color: Colors.grey[600], fontSize: 16)),
               Text(date.toString(),
-                  style: const TextStyle(
-                      color: Colors.black,
+                  style:  TextStyle(
+                      color: LightTheme().primaryText,
                       fontSize: 18,
                       fontWeight: FontWeight.bold))
             ])),
